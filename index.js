@@ -22,12 +22,28 @@ app.get('/educacion', (req, res) => {
 })
 
 app.get('/laboral', (req, res) => {
-  res.send('Página de experiencia laboral!')
+
+  res.render('laboral',{
+    titulo:"Sección de experiencia",
+    descripcion:"Aquí habra informacion laboral"
+  })
 })
 
 app.get('/infoper', (req, res) => {
-  res.send('Página de mi informacion personal!')
+  res.render('infoper',{
+    titulo:"Seccion informacion personal",
+    descripcion:"Aqui habra información personal"
+  })
 })
+
+app.get('/contacto', (req, res) => {
+  res.render('contacto',{
+    titulo:"Seccion informacion contacto",
+    descripcion:"Aqui habra informacion de habilidades"
+  })
+})
+
+
 app.use((req,res,next)=>{
   res.status(404).sendFile(__dirname +'/public/404.html')
 })
